@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "name": "Dish 1",
+    "photoUrl": "https://www.menu.am/resources/default/img/restaurant_products/small/1568791731-2056.jpeg?v=m",
+    "price": 1000
+  },{
+    "id": 2,
+    "name": "Dish 2",
+    "photoUrl": "https://www.menu.am/resources/default/img/restaurant_products/small/1568793078-7798.jpeg?v=m",
+    "price": 2000
+  },{
+    "id": 3,
+    "name": "Dish 3",
+    "photoUrl": "https://www.menu.am/resources/default/img/restaurant_products/small/1569909892-3261.jpeg?v=m",
+    "price": 1400
+  },{
+    "id": 4,
+    "name": "Dish 4",
+    "photoUrl": "https://www.menu.am/resources/default/img/restaurant_products/small/1603372533-2208.jpeg?v=m",
+    "price": 500
+  },{
+    "id": 5,
+    "name": "Dish 5",
+    "photoUrl": "https://www.menu.am/resources/default/img/restaurant_products/small/1589566611-1645.jpeg?v=m",
+    "price": 15000
+  }
+]

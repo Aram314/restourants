@@ -1,0 +1,76 @@
+.site-layout-content {
+  min-height: 280px;
+  padding: 24px;
+  background: #fff;
+}
+
+.ant-layout-sider.ant-layout-sider-dark {
+  min-width: 300px !important;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.ant-layout-sider.ant-layout-sider-dark.ant-layout-sider-collapsed {
+  min-width: 0 !important;
+  max-width: 0 !important;
+  width: 0 !important;
+  padding: 0;
+  overflow: hidden;
+}
+
+.basket-section {
+  color: white;
+  overflow: hidden;
+
+  &-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+}
+
+.logo-container {
+  float: left;
+  width: 70px;
+  height: 31px;
+  margin: 16px 16px 16px 0;
+
+  .logo {
+    height: 100%;
+    margin-bottom: 40px;
+  }
+}
+
+.basket-container {
+  height: 30px;
+  width: 30px;
+
+  .basket-icon {
+    height: 100%;
+    cursor: pointer;
+  }
+}
+
+.layout {
+  min-height: 100vh;
+
+  .navbar-left {
+    display: flex;
+  }
+
+  .ant-layout-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ant-layout-content {
+    display: flex;
+    flex-direction: column;
+
+    .site-layout-content {
+      flex-grow: 1;
+    }
+  }
+}
+
+

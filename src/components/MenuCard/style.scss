@@ -1,0 +1,27 @@
+.menu-card {
+  &-basket {
+    user-select: none;
+  }
+
+  &-place {
+    color: rgba(0,0,0,.45);
+  }
+
+  .ant-card-cover {
+    height: 170px;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .ant-input-number {
+    width: 100%;
+  }
+
+  .ant-card-actions {
+    display: flex;
+    align-items: center;
+  }
+}
