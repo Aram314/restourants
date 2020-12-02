@@ -5,13 +5,13 @@ import { List } from 'antd';
 import fetchData from '../../utils/fetchData';
 import ItemCard from '../Card';
 import Search from '../Search';
-import restaurantsContext from '../../contexts/restaurantsContext';
+import filterContext from '../../context';
 import { haveMatchedElements } from '../../utils/helper';
 import KitchenTypes from '../KitchenTypes';
 
 import './style.scss';
 
-const { Provider } = restaurantsContext;
+const { Provider } = filterContext;
 
 function MainList() {
   const [items, setItems] = useState([]);

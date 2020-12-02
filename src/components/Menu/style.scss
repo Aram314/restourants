@@ -1,8 +1,15 @@
 .menu-container {
   &-filter {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-bottom: 30px;
+    margin: 0 auto 30px;
+    width: 300px;
+
+    &-search {
+      width: 300px;
+      margin-bottom: 32px;
+    }
+    &-range {
+      width: 300px;
+      margin-bottom: 48px;
+    }
   }
 }

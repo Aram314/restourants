@@ -1,13 +1,13 @@
 import React from 'react';
 
 import { Input } from 'antd';
-import { useRestaurantsContext } from '../../contexts/restaurantsContext';
+import { useFilterContext } from '../../context';
 
-function Search() {
-  const { searchValue, setSearchValue } = useRestaurantsContext();
+function Search({ className }) {
+  const { searchValue, setSearchValue } = useFilterContext();
 
   return (
-    <div className="search-container">
+    <div className={`search-container ${className}`}>
       <Input placeholder="Search..." value={searchValue} onChange={e => setSearchValue(e.target.value)}/>
     </div>
   )

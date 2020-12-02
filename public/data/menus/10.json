@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Dish 1",
     "photoUrl": "https://www.menu.am/resources/default/img/restaurant_products/small/1563880905-6102.jpeg?v=m",
-    "price": 1000
+    "price": 1850
   },{
     "id": 2,
     "name": "Dish 2",
@@ -23,7 +23,7 @@
     "id": 5,
     "name": "Dish 5",
     "photoUrl": "https://www.menu.am/resources/default/img/restaurant_products/small/1533645468-2911.jpeg?v=m",
-    "price": 15000
+    "price": 1000
   },{
     "id": 6,
     "name": "Dish 6",

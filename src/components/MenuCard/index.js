@@ -36,7 +36,7 @@ function MenuCard({ item }) {
       cover={<img alt="example" src={photoUrl} />}
       actions={[
         <MinusSquareOutlined key="minus" onClick={() => onChangeCount(false)}/>,
-        <InputNumber className="menu-card-count-input" readOnly min={1} max={1000} value={count} onClick={() => console.log(basket)}/>,
+        <InputNumber className="menu-card-count-input" readOnly min={1} max={1000} value={count}/>,
         <PlusSquareOutlined key="plus" onClick={() => onChangeCount(true)}/>,
         <img
           src="/img/basket-black.png"

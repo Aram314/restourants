@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { List, Avatar, InputNumber, Button, Modal } from 'antd';
 import { DeleteOutlined, MinusSquareOutlined, PlusSquareOutlined } from '@ant-design/icons';
 import { useSelector, useDispatch } from 'react-redux';
-import {emptyBasket, increaseCount, removeItem} from '../../redux';
+import { emptyBasket, increaseCount, removeItem } from '../../redux';
 
 import './style.scss';
 

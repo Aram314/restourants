@@ -18,12 +18,12 @@
     "id": 4,
     "name": "Dish 4",
     "photoUrl": "https://www.menu.am/resources/default/img/restaurant_products/small/1538035281-6726.jpeg?v=m",
-    "price": 500
+    "price": 800
   },{
     "id": 5,
     "name": "Dish 5",
     "photoUrl": "https://www.menu.am/resources/default/img/restaurant_products/small/1538040800-3226.jpeg?v=m",
-    "price": 15000
+    "price": 100
   },{
     "id": 6,
     "name": "Dish 6",

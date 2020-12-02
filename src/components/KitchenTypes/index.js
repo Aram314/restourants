@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 
 import { Tag } from 'antd';
 import fetchData from '../../utils/fetchData';
-import { useRestaurantsContext } from '../../contexts/restaurantsContext';
+import { useFilterContext } from '../../context';
 
 const { CheckableTag } = Tag;
 
 function KitchenTypes() {
   const [tags, setTags] = useState([]);
-  const { selectedTags, setSelectedTags } = useRestaurantsContext();
+  const { selectedTags, setSelectedTags } = useFilterContext();
 
   const handleChange = (tag, checked) => {
     const nextSelectedTags = checked ? [...selectedTags, tag] : selectedTags.filter(t => t !== tag);

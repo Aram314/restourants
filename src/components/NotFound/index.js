@@ -1,8 +1,16 @@
 import React from 'react';
+import { Empty } from 'antd';
 
 function NotFound() {
   return (
-    <div>NotFound</div>
+    <div>
+      <Empty
+        description={
+          <span>
+            Page Not Found
+          </span>
+        }/>
+    </div>
   )
 }
 
