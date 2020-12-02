@@ -25,7 +25,6 @@ function MenuCard({ item }) {
   const { kitchenTypes } = item;
 
   const onChangeCount = (isPlus) => {
-    console.log(isPlus)
     if(count === 1 && !isPlus) return;
     setCount(isPlus ? count + 1 : count - 1)
   }
@@ -44,6 +43,7 @@ function MenuCard({ item }) {
           alt="basket"
           className="menu-card-basket"
           onClick={() => {
+            setCount(1);
             dispatch(addItem(item, count))
           }}
         />,

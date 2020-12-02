@@ -11,7 +11,6 @@ function Basket() {
   const dispatch = useDispatch();
   const basket = useSelector(state => state.basket);
 
-  console.log(basket)
   let totalPrice = 0;
 
   const data = [];
@@ -43,7 +42,7 @@ function Basket() {
       },
     });
   }
-  console.log(basket.size, 'size size size')
+
   return (
     <List
       className="basket"

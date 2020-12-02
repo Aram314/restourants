@@ -1,5 +1,5 @@
 .basket {
-  .ant-list-item, .ant-list-item-meta-title, .ant-list-footer  {
+  .ant-list-item, .ant-list-item-meta-title, .ant-list-footer, .ant-empty-description  {
     color: white;
   }
 
@@ -35,6 +35,7 @@
 
     &-total-price {
       font-size: 18px;
+      user-select: none;
     }
   }
 }
