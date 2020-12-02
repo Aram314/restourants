@@ -1,4 +1,4 @@
-import { ADD_ITEM, REMOVE_ITEM, EMPTY_BASKET, INCREASE_COUNT, DECREASE_COUNT } from './basketTypes';
+import { ADD_ITEM, REMOVE_ITEM, EMPTY_BASKET, INCREASE_COUNT } from './basketTypes';
 
 export const addItem = (item, count) => {
   return {
@@ -24,12 +24,5 @@ export const increaseCount = (item, count) => {
   return {
     type: INCREASE_COUNT,
     payload: { item, count }
-  }
-}
-
-export const decreaseCount = (id) => {
-  return {
-    type: DECREASE_COUNT,
-    payload: { id }
   }
 }

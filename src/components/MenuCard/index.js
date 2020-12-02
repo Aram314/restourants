@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-import { useHistory } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Card, Space, InputNumber } from 'antd';
 import { MinusSquareOutlined, PlusSquareOutlined } from '@ant-design/icons';
 import { addItem } from '../../redux';
@@ -9,20 +8,11 @@ import { addItem } from '../../redux';
 import './style.scss';
 
 const { Meta } = Card;
-function InputField() {
-  return (
-    <input type="text"/>
-  )
-}
 
 function MenuCard({ item }) {
   const { name, photoUrl, price } = item;
   const dispatch = useDispatch();
-  const basket = useSelector(state => state.basket)
   const [count, setCount] = useState(1);
-
-  const history = useHistory();
-  const { kitchenTypes } = item;
 
   const onChangeCount = (isPlus) => {
     if(count === 1 && !isPlus) return;
@@ -50,7 +40,10 @@ function MenuCard({ item }) {
       ]}
     >
       <Meta
-        title={(<Space><span>{name}</span><span className="item-card-place">({price})</span></Space>)}
+        title={(<Space>
+          <span>{name}</span>
+          <span className="item-card-place">({price})</span>
+        </Space>)}
         description={price} />
     </Card>
   )

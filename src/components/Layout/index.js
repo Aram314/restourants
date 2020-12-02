@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu } from 'antd';
 import { Link, useHistory } from 'react-router-dom';
 import Router from '../../routes';
 import Breadcrumbs from '../Breadcrumbs';
@@ -17,9 +17,9 @@ function MainLayout() {
     '2' : history.location.pathname === '/cafes' ?
       '3' : '1';
 
-  const toggle = () => {
+  const toggle = useCallback(() => {
     setCollapsed(!collapsed)
-  };
+  }, [collapsed]);
 
   return (
     <Layout style={{ minHeight: '100vh' }} className="layout site-layout">
@@ -34,9 +34,15 @@ function MainLayout() {
               <img src="/img/logo.png" alt="r&c" className="logo" />
             </div>
             <Menu theme="dark" mode="horizontal" defaultSelectedKeys={[defaultSelectedKey]}>
-              <Menu.Item key="1"><Link to='/'>All</Link></Menu.Item>
-              <Menu.Item key="2"><Link to='/restaurants'>Restaurants</Link></Menu.Item>
-              <Menu.Item key="3"><Link to='/cafes'>Cafés</Link></Menu.Item>
+              <Menu.Item key="1">
+                <Link to='/'>All</Link>
+              </Menu.Item>
+              <Menu.Item key="2">
+                <Link to='/restaurants'>Restaurants</Link>
+              </Menu.Item>
+              <Menu.Item key="3">
+                <Link to='/cafes'>Cafés</Link>
+              </Menu.Item>
             </Menu>
           </div>
           <div className="basket-container">
@@ -54,7 +60,7 @@ function MainLayout() {
             <Router />
           </div>
         </Content>
-        <Footer style={{ textAlign: 'center' }}>R&C Design ©2020 Created by Me</Footer>
+        <Footer className="footer">R&C Design ©2020 Created by Me</Footer>
       </Layout>
      </Layout>
   )

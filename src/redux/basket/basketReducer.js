@@ -1,4 +1,4 @@
-import { ADD_ITEM, REMOVE_ITEM, EMPTY_BASKET, INCREASE_COUNT, DECREASE_COUNT} from './basketTypes';
+import { ADD_ITEM, REMOVE_ITEM, EMPTY_BASKET, INCREASE_COUNT} from './basketTypes';
 import produce from 'immer';
 import { message } from 'antd';
 
@@ -28,8 +28,6 @@ const basketReducer = produce((state = initialState, action) => {
       }
       state.set(action.payload.item, state.get(action.payload.item) + action.payload.count)
       return;
-    case DECREASE_COUNT:
-      return state;
     default:
       return state;
   }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import { List, Avatar, InputNumber, Button, Modal } from 'antd';
 import { DeleteOutlined, MinusSquareOutlined, PlusSquareOutlined } from '@ant-design/icons';
@@ -25,11 +25,11 @@ function Basket() {
     })
   }
 
-  const onCountChange = (isPlus, item) => {
+  const onCountChange = useCallback((isPlus, item) => {
     dispatch(increaseCount(item, isPlus ? 1 : -1))
-  }
+  }, [dispatch]);
 
-  const makeOrder = () => {
+  const makeOrder = useCallback(() => {
     Modal.info({
       title: 'Your order was successfully made.',
       content: (
@@ -41,7 +41,7 @@ function Basket() {
         dispatch(emptyBasket())
       },
     });
-  }
+  }, [dispatch, totalPrice]);
 
   return (
     <List

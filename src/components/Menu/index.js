@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, memo, useCallback } from 'react';
 
 import { useHistory } from 'react-router-dom';
 import { List, Slider } from 'antd';
@@ -22,11 +22,12 @@ function Menu() {
   const minPrice = useMemo(() => Math.min(...data.map(item => item.price)), [data]);
   const maxPrice = useMemo(() => Math.max(...data.map(item => item.price)), [data]);
   const multiplier = useMemo(() => (maxPrice - minPrice) / 100, [maxPrice, minPrice]);
+  const pathname = history.location.pathname;
 
   useEffect(() => {
     let tempData = [];
 
-    const path = history.location.pathname.split('/');
+    const path = pathname.split('/');
     const itemId = path[path.length - 1];
     // all filter cases goes here....
     fetchData(`/data/menus/${itemId}.json`)
@@ -42,12 +43,16 @@ function Menu() {
         setMenu(tempData);
       })
       .catch(err => history.push("/notfound"))
-  }, [searchValue, history.location.pathname, min, max]);
+  }, [searchValue, pathname, min, max, history]);
 
-  const onRangeChange = (value) => {
+  const onRangeChange = useCallback((value) => {
     setMin(multiplier * value[0] + minPrice);
     setMax(multiplier * value[1] + minPrice);
-  }
+  }, [multiplier, minPrice]);
+
+  const formatTip = useCallback((value) => {
+    return value * multiplier + minPrice
+  }, [multiplier, minPrice]);
 
   return (
     <Provider value={{ searchValue, setSearchValue }}>
@@ -60,7 +65,7 @@ function Menu() {
             range
             defaultValue={[0, 100]}
             onChange={onRangeChange}
-            tipFormatter={value => value * multiplier + minPrice}
+            tipFormatter={formatTip}
           />
         </div>
         <List
@@ -85,4 +90,4 @@ function Menu() {
   )
 }
 
-export default Menu
+export default memo(Menu)

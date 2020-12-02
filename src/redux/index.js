@@ -1,1 +1,1 @@
-export { addItem, removeItem, emptyBasket, increaseCount, decreaseCount } from './basket/basketActions';
+export { addItem, removeItem, emptyBasket, increaseCount } from './basket/basketActions';

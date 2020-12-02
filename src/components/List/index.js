@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 
 import { useHistory } from 'react-router-dom';
 import { List } from 'antd';
@@ -39,7 +39,7 @@ function MainList() {
   }, [history.location.pathname, searchValue, selectedTags]);
 
   return (
-    <Provider value={{ searchValue, setSearchValue, selectedTags, setSelectedTags, test: 4 }}>
+    <Provider value={{ searchValue, setSearchValue, selectedTags, setSelectedTags }}>
       <div className="list-container">
         <div className="list-container-filter">
           <Search />
@@ -68,4 +68,4 @@ function MainList() {
   )
 }
 
-export default MainList
+export default memo(MainList)

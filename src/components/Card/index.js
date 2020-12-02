@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import { Card, Space, Tag } from 'antd';
-import fetchData from '../../utils/fetchData';
 import { useHistory } from 'react-router-dom';
 
 import './style.scss';
@@ -9,12 +8,6 @@ import './style.scss';
 const { Meta } = Card;
 
 function ItemCard({ item }) {
-  // const [types, setTypes] = useState([]);
-  //
-  // useEffect(() => {
-  //   fetchData('/data/kitchenTypes.json')
-  //     .then(data => setTypes(data))
-  // }, []);
   const history = useHistory();
   const { kitchenTypes } = item;
   return (

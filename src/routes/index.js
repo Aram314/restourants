@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import { Route, Switch, Redirect } from 'react-router-dom';
 
@@ -20,4 +20,4 @@ function Router() {
   )
 }
 
-export default Router
+export default memo(Router)
