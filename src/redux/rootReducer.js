@@ -1,7 +1,11 @@
 import { combineReducers } from 'redux'
+import basketReducer from './basket/basketReducer';
+import { enableMapSet } from 'immer'
+
+enableMapSet();
 
 const rootReducer = combineReducers({
-  test: () => {return 4}
+  basket: basketReducer
 })
 
 export default rootReducer

@@ -4,6 +4,7 @@ import { Layout, Menu, Breadcrumb } from 'antd';
 import { Link, useHistory } from 'react-router-dom';
 import Router from '../../routes';
 import Breadcrumbs from '../Breadcrumbs';
+import Basket from '../Basket';
 
 import './style.scss';
 
@@ -16,10 +17,6 @@ function MainLayout() {
     '2' : history.location.pathname === '/cafes' ?
       '3' : '1';
 
-  const onCollapse = collapsed => {
-    setCollapsed(collapsed)
-  };
-
   const toggle = () => {
     setCollapsed(!collapsed)
   };
@@ -28,6 +25,7 @@ function MainLayout() {
     <Layout style={{ minHeight: '100vh' }} className="layout site-layout">
       <Sider className="basket-section" trigger={null} collapsible collapsed={collapsed}>
         <div className="basket-section-title">Your Basket</div>
+        <Basket />
       </Sider>
       <Layout className="layout site-layout">
         <Header>

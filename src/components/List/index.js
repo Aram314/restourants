@@ -4,10 +4,14 @@ import { useHistory } from 'react-router-dom';
 import { List } from 'antd';
 import fetchData from '../../utils/fetchData';
 import ItemCard from '../Card';
+import Search from '../Search';
+
+import './style.scss';
 
 function MainList() {
   const [items, setItems] = useState([]);
   const history = useHistory();
+
   useEffect(() => {
     fetchData('/data/restaurants.json')
       .then(data => {
@@ -20,23 +24,26 @@ function MainList() {
   }, [history.location.pathname]);
 
   return (
-    <List
-      grid={{
-        gutter: 16,
-        xs: 1,
-        sm: 2,
-        md: 3,
-        lg: 4,
-        xl: 4,
-        xxl: 4,
-      }}
-      dataSource={items}
-      renderItem={item => (
-        <List.Item>
-          <ItemCard item={item} title={item.name}>{item.name}</ItemCard>
-        </List.Item>
-      )}
-    />
+    <div className="list-container">
+      <Search />
+      <List
+        grid={{
+          gutter: 16,
+          xs: 1,
+          sm: 2,
+          md: 3,
+          lg: 4,
+          xl: 4,
+          xxl: 4,
+        }}
+        dataSource={items}
+        renderItem={item => (
+          <List.Item>
+            <ItemCard item={item} title={item.name}>{item.name}</ItemCard>
+          </List.Item>
+        )}
+      />
+    </div>
   )
 }
 

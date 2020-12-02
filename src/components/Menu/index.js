@@ -12,11 +12,10 @@ function Menu() {
   useEffect(() => {
     const path = history.location.pathname.split('/');
     const itemId = path[path.length - 1];
-    console.log(itemId, 'idididid')
     fetchData(`/data/menus/${itemId}.json`)
       .then(data => setMenu(data))
   }, []);
-  // console.log(menu)
+
   return (
     <div>
       <List

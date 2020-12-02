@@ -1,17 +1,17 @@
 [
   {
     "id": 1,
-    "name": "Dish 1",
+    "name": "Burger",
     "photoUrl": "https://www.menu.am/resources/default/img/restaurant_products/small/1441820332,3528.jpeg?v=m",
     "price": 1000
   },{
     "id": 2,
-    "name": "Dish 2",
+    "name": "Pizza",
     "photoUrl": "https://www.menu.am/resources/default/img/restaurant_products/small/1441821975,3282.jpeg?v=m",
     "price": 2000
   },{
     "id": 3,
-    "name": "Dish 3",
+    "name": "Salat",
     "photoUrl": "https://www.menu.am/resources/default/img/restaurant_products/small/1441872914,1287.jpeg?v=m",
     "price": 1400
   },{
@@ -21,13 +21,13 @@
     "price": 500
   },{
     "id": 5,
-    "name": "Dish 5",
+    "name": "Pivasik",
     "photoUrl": "https://www.menu.am/resources/default/img/restaurant_products/small/1441816695,2371.jpeg?v=m",
-    "price": 15000
+    "price": 750
   },{
     "id": 6,
-    "name": "Dish 6",
+    "name": "Free",
     "photoUrl": "https://www.menu.am/resources/default/img/restaurant_products/small/1441895152,9382.jpeg?v=m",
-    "price": 1700
+    "price": 900
   }
 ]

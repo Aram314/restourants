@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { Card, Space, Tag } from 'antd';
 import { useHistory } from 'react-router-dom';
-import { EllipsisOutlined, MinusSquareOutlined, PlusSquareOutlined } from '@ant-design/icons';
-import { InputNumber } from 'antd';
+import { useSelector, useDispatch } from 'react-redux';
+import { Card, Space, InputNumber } from 'antd';
+import { MinusSquareOutlined, PlusSquareOutlined } from '@ant-design/icons';
+import { addItem } from '../../redux';
 
 import './style.scss';
 
@@ -16,19 +17,36 @@ function InputField() {
 
 function MenuCard({ item }) {
   const { name, photoUrl, price } = item;
+  const dispatch = useDispatch();
+  const basket = useSelector(state => state.basket)
+  const [count, setCount] = useState(1);
 
   const history = useHistory();
   const { kitchenTypes } = item;
+
+  const onChangeCount = (isPlus) => {
+    console.log(isPlus)
+    if(count === 1 && !isPlus) return;
+    setCount(isPlus ? count + 1 : count - 1)
+  }
+
   return (
     <Card
       className='menu-card'
       hoverable
       cover={<img alt="example" src={photoUrl} />}
       actions={[
-        <MinusSquareOutlined key="minus" />,
-        <InputNumber min={1} max={1000} defaultValue={1} />,
-        <PlusSquareOutlined key="plus" />,
-        <img src="/img/basket-black.png" alt="basket" className="menu-card-basket" style={{width: '25px'}}/>,
+        <MinusSquareOutlined key="minus" onClick={() => onChangeCount(false)}/>,
+        <InputNumber className="menu-card-count-input" readOnly min={1} max={1000} value={count} onClick={() => console.log(basket)}/>,
+        <PlusSquareOutlined key="plus" onClick={() => onChangeCount(true)}/>,
+        <img
+          src="/img/basket-black.png"
+          alt="basket"
+          className="menu-card-basket"
+          onClick={() => {
+            dispatch(addItem(item, count))
+          }}
+        />,
       ]}
     >
       <Meta

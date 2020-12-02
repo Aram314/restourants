@@ -1,10 +1,15 @@
 .menu-card {
   &-basket {
     user-select: none;
+    width: 25px;
   }
 
   &-place {
     color: rgba(0,0,0,.45);
+  }
+
+  &-count-input {
+    user-select: none;
   }
 
   .ant-card-cover {

@@ -1,0 +1,40 @@
+.basket {
+  .ant-list-item, .ant-list-item-meta-title, .ant-list-footer  {
+    color: white;
+  }
+
+  .ant-list-item-meta-description {
+    color: #dcdcdc;
+  }
+
+  .ant-list-item-meta-avatar {
+    margin-right: 6px;
+  }
+
+  .ant-input-number {
+    width: 60px;
+  }
+
+  .ant-list-item-action {
+    margin-left: 18px;
+  }
+
+  .ant-list-footer {
+
+  }
+
+  &-count-input {
+    margin: 0 8px;
+    user-select: none;
+  }
+
+  &-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-total-price {
+      font-size: 18px;
+    }
+  }
+}
