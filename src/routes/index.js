@@ -3,10 +3,10 @@ import React, { memo, lazy } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import SuspenseRoute from './SuspenseRoute';
 
-import NotFound from '../components/NotFound';
+import NotFound from '../pages/NotFound';
 
-const List = lazy(() => import('../components/List'))
-const Menu = lazy(() => import('../components/Menu'));
+const List = lazy(() => import('../pages/List'))
+const Menu = lazy(() => import('../pages/Menu'));
 
 function Router() {
   return (

@@ -3,11 +3,11 @@ import React, { useState, useEffect, memo } from 'react';
 import { useHistory } from 'react-router-dom';
 import { List, Spin } from 'antd';
 import fetchData from '../../utils/fetchData';
-import ItemCard from '../Card';
-import Search from '../Search';
+import ItemCard from '../../components/Card';
+import Search from '../../components/Search';
 import filterContext from '../../context';
 import { haveMatchedElements } from '../../utils/helper';
-import KitchenTypes from '../KitchenTypes';
+import KitchenTypes from '../../components/KitchenTypes';
 
 import './style.scss';
 

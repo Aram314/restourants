@@ -4,8 +4,8 @@ import { useHistory } from 'react-router-dom';
 import { List, Slider, Spin } from 'antd';
 import filterContext from '../../context';
 import fetchData from '../../utils/fetchData';
-import MenuCard from '../MenuCard';
-import Search from '../Search';
+import MenuCard from '../../components/MenuCard';
+import Search from '../../components/Search';
 
 import './style.scss';
 
