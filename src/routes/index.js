@@ -1,19 +1,21 @@
-import React, { memo } from 'react';
+import React, { memo, lazy } from 'react';
 
 import { Route, Switch, Redirect } from 'react-router-dom';
+import SuspenseRoute from './SuspenseRoute';
 
-import List from '../components/List';
-import Menu from '../components/Menu';
 import NotFound from '../components/NotFound';
+
+const List = lazy(() => import('../components/List'))
+const Menu = lazy(() => import('../components/Menu'));
 
 function Router() {
   return (
     <Switch>
-      <Route exact path='/' component={List}/>
-      <Route exact path='/restaurants' component={List}/>
-      <Route exact path='/restaurants/:id' component={Menu}/>
-      <Route exact path='/cafes' component={List}/>
-      <Route exact path='/cafes/:id' component={Menu}/>
+      <SuspenseRoute exact path='/' component={List}/>
+      <SuspenseRoute exact path='/restaurants' component={List}/>
+      <SuspenseRoute exact path='/restaurants/:id' component={Menu} />
+      <SuspenseRoute exact path='/cafes' component={List}/>
+      <SuspenseRoute exact path='/cafes/:id' component={Menu}/>
       <Route exact path='/notfound' component={NotFound}/>
       <Redirect to='/notfound'/>
     </Switch>

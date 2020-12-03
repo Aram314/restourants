@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, memo, useCallback } from 'react';
 
 import { useHistory } from 'react-router-dom';
-import { List, Slider } from 'antd';
+import { List, Slider, Spin } from 'antd';
 import filterContext from '../../context';
 import fetchData from '../../utils/fetchData';
 import MenuCard from '../MenuCard';
@@ -13,7 +13,8 @@ const { Provider } = filterContext;
 
 function Menu() {
   const history = useHistory();
-  const [data, setData] = useState([]);
+  const defaultData = [];
+  const [data, setData] = useState(defaultData);
   const [menu, setMenu] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const [min, setMin] = useState(0);
@@ -55,38 +56,40 @@ function Menu() {
   }, [multiplier, minPrice]);
 
   return (
-    <Provider value={{ searchValue, setSearchValue }}>
-      <div className="menu-container">
-        <div className="menu-container-filter">
-          <Search className="menu-container-filter-search"/>
-          <Slider
-            marks={{ 0: minPrice, 100: maxPrice }}
-            className="menu-container-filter-range"
-            range
-            defaultValue={[0, 100]}
-            onChange={onRangeChange}
-            tipFormatter={formatTip}
+    <Spin size="large" spinning={defaultData === data} tip="Loading...">
+      <Provider value={{ searchValue, setSearchValue }}>
+        <div className="menu-container">
+          <div className="menu-container-filter">
+            <Search className="menu-container-filter-search"/>
+            <Slider
+              marks={{ 0: minPrice, 100: maxPrice }}
+              className="menu-container-filter-range"
+              range
+              defaultValue={[0, 100]}
+              onChange={onRangeChange}
+              tipFormatter={formatTip}
+            />
+          </div>
+          <List
+            grid={{
+              gutter: 16,
+              xs: 1,
+              sm: 2,
+              md: 3,
+              lg: 4,
+              xl: 4,
+              xxl: 4,
+            }}
+            dataSource={menu}
+            renderItem={item => (
+              <List.Item>
+                <MenuCard item={item} />
+              </List.Item>
+            )}
           />
         </div>
-        <List
-          grid={{
-            gutter: 16,
-            xs: 1,
-            sm: 2,
-            md: 3,
-            lg: 4,
-            xl: 4,
-            xxl: 4,
-          }}
-          dataSource={menu}
-          renderItem={item => (
-            <List.Item>
-              <MenuCard item={item} />
-            </List.Item>
-          )}
-        />
-      </div>
-    </Provider>
+      </Provider>
+    </Spin>
   )
 }
 
